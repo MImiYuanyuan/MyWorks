@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yinyuan.myworks.CustomCameraActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_finder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginBottom="10dp"
+        android:background="@mipmap/seal_camera_bottom"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="请将智能印章及文件，置于屏幕内"
+            android:textColor="#222222"
+            android:textSize="13sp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_use_seal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_hand_model"
+                    android:layout_width="32dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/hand_model" />
+
+
+                <TextView
+                    android:id="@+id/tv_hand_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="手持模式"
+                    android:textColor="#FF006FEE"
+                    android:textSize="15sp"></TextView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_seal_end"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_bracket_model"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@mipmap/bracket_model_unselect"></ImageView>
+
+                <TextView
+                    android:id="@+id/tv_bracket_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="支架模式"
+                    android:textColor="#FF999999"
+                    android:textSize="15sp"></TextView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:id="@+id/rl_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button">
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/icon_custom_photograph_close"></ImageView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_switch_camera"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12.5dp"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/icon_custom_photograph_flip"></ImageView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/button"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="25.5dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/icon_custom_album"></ImageView>
+
+    </RelativeLayout>
+
+
+
+    <com.hjq.shape.view.ShapeImageView
+        android:id="@+id/button"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:visibility="visible"
+        android:layout_marginBottom="22dp"
+        android:src="@mipmap/icon_custom_photograph"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shape_solidPressedColor="#99000000"
+        app:shape_type="ring" >
+
+    </com.hjq.shape.view.ShapeImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
